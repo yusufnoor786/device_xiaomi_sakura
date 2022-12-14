@@ -17,13 +17,19 @@ $(call inherit-product, device/xiaomi/sakura/device.mk)
 # Inherit some common source stuff
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
-$(call inherit-product, vendor/blaze/config/common_full_phone.mk)
+TARGET_GAPPS_ARCH := arm64
+FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_QUICK_TAP := true
+
+# Inherit some common flexo stuff
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := sakura
-PRODUCT_NAME := blaze_sakura
+PRODUCT_NAME := aosp_sakura
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi 6 Pro
 PRODUCT_MANUFACTURER := Xiaomi
 TARGET_VENDOR := Xiaomi
+
